@@ -30,4 +30,4 @@ cd numpy
 git checkout v${NP_VERSION}
 git submodule update --init
 pip install -r build_requirements.txt
-#python -m build -Csetup-args=-Dblas=mkl -Csetup-args=-Dlapack=mkl -Csetup-args=-Dmkl-threading=tbb
+python -m build -Csetup-args=-Dblas=mkl -Csetup-args=-Dlapack=mkl -Csetup-args=-Dmkl-threading=tbb

@@ -7,3 +7,6 @@ ENV LD_LIBRARY_PATH=/opt/git/lib:/opt/python/py311/lib:${LD_LIBRARY_PATH}
 WORKDIR /tmp
 COPY installmkl.sh ./
 RUN ./installmkl.sh
+WORKDIR /root
+COPY . .
+ENV TERM=xterm-256color
