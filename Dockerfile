@@ -1,7 +1,7 @@
 FROM ebrown/git:latest as built_git
 FROM ebrown/python:3.12 as prod
 
-RUN  dnf install -y mpfr-devel libmpc-devel 
+RUN  dnf install -y mpfr-devel libmpc-devel gmp-devel
 COPY --from=built_git /opt/git /opt/git
 ENV PATH=/opt/git/bin:/opt/python/py312/bin:${PATH}
 ENV LD_LIBRARY_PATH=/opt/git/lib:/opt/python/py312/lib:${LD_LIBRARY_PATH}
