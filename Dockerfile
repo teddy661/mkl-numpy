@@ -1,10 +1,9 @@
 FROM ebrown/git:latest as built_git
-FROM ebrown/python:3.12 as prod
+FROM ebrown/python:3.11 as prod
 
-RUN  dnf install -y libgmp-dev libmpfr-dev libmpc-devel 
 COPY --from=built_git /opt/git /opt/git
-ENV PATH=/opt/git/bin:/opt/python/py312/bin:${PATH}
-ENV LD_LIBRARY_PATH=/opt/git/lib:/opt/python/py312/lib:${LD_LIBRARY_PATH}
+ENV PATH=/opt/git/bin:/opt/python/py311/bin:${PATH}
+ENV LD_LIBRARY_PATH=/opt/git/lib:/opt/python/py311/lib:${LD_LIBRARY_PATH}
 WORKDIR /tmp
 COPY build-numpy-scipy.sh ./
 RUN chmod 700 ./build-numpy-scipy.sh && ./build-numpy-scipy.sh
