@@ -40,11 +40,12 @@ python -m venv  ${BUILD_SCIPY_ENV_ROOT}
 . ./${BUILD_SCIPY_ENV_ROOT}/bin/activate
 python -m pip install --upgrade pip
 # Build dependencies
-python -m pip install ./numpy/numpy/dist/numpy-${NP_VERSION}-cp311-cp311-linux_x86_64.whl
+python -m pip install ./numpy/numpy/dist/numpy-${NP_VERSION}-cp312-cp312-linux_x86_64.whl
 python -m pip install build cython pythran pybind11 meson ninja pydevtool rich-click
 
 # Test and optional runtime dependencies
-python -m pip install pytest pytest-xdist pytest-timeout pooch threadpoolctl asv gmpy2 mpmath
+# python -m pip install pytest pytest-xdist pytest-timeout pooch threadpoolctl asv gmpy2 mpmath
+python -m pip install pytest pytest-xdist pytest-timeout pooch threadpoolctl asv mpmath
 
 # Doc build dependencies
 python -m pip install sphinx "pydata-sphinx-theme==0.9.0" sphinx-design matplotlib numpydoc jupytext myst-nb
