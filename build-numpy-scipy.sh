@@ -33,14 +33,14 @@ git submodule update --init
 pip install -r build_requirements.txt
 python -m build -Csetup-args=-Dblas=mkl-sdl -Csetup-args=-Dlapack=mkl-sdl -Csetup-args=-Dmkl-threading=tbb
 
-SCIPY_VERSION=1.12.0
+SCIPY_VERSION=1.13.0
 cd /tmp
 BUILD_SCIPY_ENV_ROOT=build_scipy
 python -m venv  ${BUILD_SCIPY_ENV_ROOT}
 . ./${BUILD_SCIPY_ENV_ROOT}/bin/activate
 python -m pip install --upgrade pip
 # Build dependencies
-python -m pip install ./numpy/numpy/dist/numpy-${NP_VERSION}-cp312-cp312-linux_x86_64.whl
+python -m pip install ./numpy/numpy/dist/numpy-${NP_VERSION}-cp311-cp311-linux_x86_64.whl
 python -m pip install build cython pythran pybind11 meson ninja pydevtool rich-click
 
 # Test and optional runtime dependencies
