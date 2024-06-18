@@ -30,7 +30,7 @@ git clone https://github.com/numpy/numpy.git
 cd numpy
 git checkout v${NP_VERSION}
 git submodule update --init
-pip install -r build_requirements.txt
+pip install -r requirements/build_requirements.txt
 python -m build -Csetup-args=-Dblas=mkl-sdl -Csetup-args=-Dlapack=mkl-sdl -Csetup-args=-Dmkl-threading=tbb
 
 SCIPY_VERSION=1.13.1
