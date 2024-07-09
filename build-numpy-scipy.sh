@@ -33,7 +33,7 @@ git submodule update --init
 pip install -r requirements/build_requirements.txt
 python -m build -Csetup-args=-Dblas=mkl-sdl -Csetup-args=-Dlapack=mkl-sdl -Csetup-args=-Dmkl-threading=tbb
 
-SCIPY_VERSION=1.13.1
+SCIPY_VERSION=1.14.0
 cd /tmp
 BUILD_SCIPY_ENV_ROOT=build_scipy
 python -m venv  ${BUILD_SCIPY_ENV_ROOT}
