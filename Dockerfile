@@ -1,5 +1,5 @@
-FROM ebrown/git:latest as built_git
-FROM ebrown/python:3.11 as prod
+FROM ebrown/git:latest AS built_git
+FROM ebrown/python:3.11 AS prod
 
 COPY --from=built_git /opt/git /opt/git
 ENV PATH=/opt/git/bin:/opt/python/py311/bin:${PATH}
