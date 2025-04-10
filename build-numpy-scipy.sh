@@ -25,7 +25,7 @@ python -m venv  ${BUILD_NUMPY_ENV_ROOT}
 pip install --upgrade pip
 mkdir /tmp/numpy
 cd /tmp/numpy
-NP_VERSION=2.0.1
+NP_VERSION=2.2.4
 git clone https://github.com/numpy/numpy.git
 cd numpy
 git checkout v${NP_VERSION}
@@ -33,14 +33,14 @@ git submodule update --init
 pip install -r requirements/build_requirements.txt
 python -m build -Csetup-args=-Dblas=mkl-sdl -Csetup-args=-Dlapack=mkl-sdl -Csetup-args=-Dmkl-threading=tbb
 
-SCIPY_VERSION=1.14.0
+SCIPY_VERSION=1.15.2
 cd /tmp
 BUILD_SCIPY_ENV_ROOT=build_scipy
 python -m venv  ${BUILD_SCIPY_ENV_ROOT}
 . ./${BUILD_SCIPY_ENV_ROOT}/bin/activate
 python -m pip install --upgrade pip
 # Build dependencies
-python -m pip install ./numpy/numpy/dist/numpy-${NP_VERSION}-cp311-cp311-linux_x86_64.whl
+python -m pip install ./numpy/numpy/dist/numpy-${NP_VERSION}-cp313-cp313-linux_x86_64.whl
 python -m pip install build cython pythran pybind11 meson ninja pydevtool rich-click
 
 # Test and optional runtime dependencies
