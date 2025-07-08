@@ -25,7 +25,7 @@ python -m venv  ${BUILD_NUMPY_ENV_ROOT}
 pip install --upgrade pip
 mkdir /tmp/numpy
 cd /tmp/numpy
-NP_VERSION=2.2.4
+NP_VERSION=2.3.1
 git clone https://github.com/numpy/numpy.git
 cd numpy
 git checkout v${NP_VERSION}
@@ -33,7 +33,7 @@ git submodule update --init
 pip install -r requirements/build_requirements.txt
 python -m build -Csetup-args=-Dblas=mkl-sdl -Csetup-args=-Dlapack=mkl-sdl -Csetup-args=-Dmkl-threading=tbb
 
-SCIPY_VERSION=1.15.2
+SCIPY_VERSION=1.16.0
 cd /tmp
 BUILD_SCIPY_ENV_ROOT=build_scipy
 python -m venv  ${BUILD_SCIPY_ENV_ROOT}
